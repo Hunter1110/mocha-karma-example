@@ -14,7 +14,7 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'test/**/*.spec.js'
+            'test/unit/**/*.spec.js'
         ],
 
         // list of files to exclude
@@ -25,7 +25,7 @@ module.exports = function(config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'test/**/*.spec.js': ['webpack'] //, 'coverage'
+            'test/unit/**/*.spec.js': ['webpack'] //, 'coverage'由istanbul默认处理
         },
 
         // test results reporter to use
@@ -33,10 +33,10 @@ module.exports = function(config) {
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         //  progress karma-htmlfile-reporter 
         // karma-html-detailed-reporter 如果作者修改了编码，可以考虑
-        reporters: ['progress', 'html', 'coverage'],
+        reporters: ['dots', 'html', 'coverage'],
 
         htmlReporter: {
-            outputFile: '_report/units.html',
+            outputFile: './build/_report/units.html',
 
             // Optional 
             pageTitle: 'Unit Tests',
@@ -54,7 +54,7 @@ module.exports = function(config) {
 
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_INFO,
+        logLevel: config.LOG_ERROR,
 
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
@@ -73,7 +73,7 @@ module.exports = function(config) {
 
         coverageReporter: {
             type: 'html',
-            dir: 'coverage/'
+            dir: './build/coverage/'
         },
 
         webpack: {

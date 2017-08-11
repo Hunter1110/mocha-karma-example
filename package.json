@@ -1,12 +1,12 @@
 {
-  "name": "karma-mocha-example",
+  "name": "mocha-karma-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "author": "dailc",
   "license": "MIT",
   "scripts": {
-    "start": "node_modules/.bin/karma start"
+    "test": "node_modules/.bin/karma start"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
