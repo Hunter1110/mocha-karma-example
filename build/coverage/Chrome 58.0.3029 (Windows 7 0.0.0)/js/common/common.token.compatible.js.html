@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\common\common.token.compatible.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/common/</a> common.token.compatible.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.01% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>49/69</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">39.13% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>18/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.22% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>13/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.01% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>49/69</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * 作者: 戴荔春
+ * 创建时间: 2017/08/03
+ * 版本: [1.0, 2017/08/03 ]
+ * 版权: 江苏国泰新点软件有限公司
+ * 描述: ejs token的处理，包括
+ * h5下的代理
+ * ajax请求时的自动注入
+ */
+&nbsp;
+(function(Config) {
+    // 每个页面默认只会请求一次token
+    var globalToken,
+        // token自动过期的定时器
+        timer,
+        tokenDuration = Config.token.duration || <span class="branch-1 cbranch-no" title="branch not covered" >7200;</span>
+&nbsp;
+    var durationTimer = function() {
+        clearTimeout(timer);
+&nbsp;
+        timer = setTimeout(function() <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            globalToken = undefined;</span>
+        }, tokenDuration * 1000);
+    };
+    /**
+     * 获取token，通过回调传值
+     * @param {Function} success
+     * @param {Function} error
+     */
+    var getTokenH5 = function(success) {
+        if (globalToken) {
+            success(globalToken);
+        } else {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Config.token.getToken === 'string') {
+<span class="cstat-no" title="statement not covered" >                globalToken = Config.token.getToken;</span>
+<span class="cstat-no" title="statement not covered" >                success(globalToken);</span>
+            } else <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Config.token.getToken === 'function') {
+                Config.token.getToken(function(token) {
+                    globalToken = token;
+                    success(globalToken);
+                    durationTimer();
+                });
+            }
+        }
+&nbsp;
+    };
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (Config.ejsVer == 3) {
+<span class="cstat-no" title="statement not covered" >        ejs.extendApi('auth', {</span>
+            namespace: "getToken",
+            os: ['h5'],
+            runCode: function(options, resolve, reject) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                getTokenH5(function(token) <span class="fstat-no" title="function not covered" >{</span></span>
+                    var result = <span class="cstat-no" title="statement not covered" >{</span>
+                        token: token || ''
+                    };
+<span class="cstat-no" title="statement not covered" >                    options.success &amp;&amp; options.success(result);</span>
+<span class="cstat-no" title="statement not covered" >                    resolve &amp;&amp; resolve(result);</span>
+                });
+            }
+        });
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (Config.ejsVer == 2) {
+        var oldToken = ejs.oauth.getToken;
+&nbsp;
+        ejs.oauth.getToken = function(callback, defaultValue) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (Util.os.ejs) {
+<span class="cstat-no" title="statement not covered" >                oldToken.apply(this, arguments);</span>
+            } else {
+                getTokenH5(function(token) {
+                    var result = {
+                        token: token || <span class="branch-1 cbranch-no" title="branch not covered" >''</span>
+                    };
+                    callback &amp;&amp; callback(result);
+                });
+            }
+        };
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (Config.token.isAutoSend) {
+        // 如果自动发送，需要截取ajax
+        var oldAjax = Util.ajax;
+&nbsp;
+        // 通过不同的规则，对请求的token做不同处理
+        var analysisRule = function(options, token) {
+            var rule = Config.token.sendType,
+                name = Config.token.name,
+                data = options.data;
+&nbsp;
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (rule === 'request_head') {
+                var headers = <span class="cstat-no" title="statement not covered" >options.headers || {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                headers[name] = token;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                options.headers = headers;</span>
+            } else <span class="missing-if-branch" title="else path not taken" >E</span>if (rule === 'request_body') {
+&nbsp;
+                // 先反解析body字符串，然后再插入字段
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof data === 'string') {
+                    try {
+                        data = JSON.parse(data);
+                    } catch (e) {
+<span class="cstat-no" title="statement not covered" >                        if (Config.isDebug) {</span>
+<span class="cstat-no" title="statement not covered" >                            console.error("错误，ajax的发送数据不为body字符串，与token解析规则不一样");</span>
+                        }
+                    }
+                }
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof data === 'object') {
+                    data[name] = token;
+                    options.data = JSON.stringify(data);
+                }
+            } else <span class="cstat-no" title="statement not covered" >if (rule === 'request_body_pairs') {</span>
+<span class="cstat-no" title="statement not covered" >                if (typeof data === 'object') {</span>
+<span class="cstat-no" title="statement not covered" >                    data[name] = token;</span>
+                }
+            }
+&nbsp;
+            return options;
+        };
+&nbsp;
+        // token的缓存已经改成API内部进行了
+        var getTokenByCach = function(callback) {
+&nbsp;
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (Config.ejsVer === 3) {
+<span class="cstat-no" title="statement not covered" >                ejs.auth.getToken({</span>
+                    success: function(result) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                        callback(result.token);</span>
+                    }
+                });
+            } else <span class="missing-if-branch" title="else path not taken" >E</span>if (Config.ejsVer === 2) {
+                ejs.oauth.getToken(function(result) {
+                    callback(result.token);
+                });
+            }
+        };
+&nbsp;
+        Util.ajax = function(options) {
+            var newPromise = new Promise(function(resolve, reject) {
+                var newOptions = Util.extend({}, options);
+&nbsp;
+                getTokenByCach(function(token) {
+                    resolve(analysisRule(newOptions, token));
+                }, options);
+&nbsp;
+            });
+&nbsp;
+            return newPromise.then(function(val) {
+                return oldAjax(val);
+            }).catch(function(error) <span class="fstat-no" title="function not covered" >{</span>
+                // 目前不实现错误的情况，直接抛出，防止冲突
+<span class="cstat-no" title="statement not covered" >                throw error;</span>
+            });
+        };
+    }
+&nbsp;
+})(window.Config);</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Aug 11 2017 16:38:31 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

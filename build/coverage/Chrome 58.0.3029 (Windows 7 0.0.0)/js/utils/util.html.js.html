@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\utils\util.html.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/utils/</a> util.html.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40.74% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>11/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.56% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40.74% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/27</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * 作者: 戴荔春
+ * 创建时间: 2017/07/03 
+ * 版本: [1.0, 2017/07/05 ]
+ * 版权: 江苏国泰新点软件有限公司
+ * 描述: 与html页面操作相关，包括
+ * 富文本，添加详情等等
+ */
+(function() {
+    "use strict";
+    var innerUtil = {
+        /**
+         * 屏蔽字符串中的脚本标签与object标签
+         * 一般用于富文本渲染之前
+         * @param {String} str
+         */
+        filterScript: function(str) {
+            var reg1 = /&lt;object[^&gt;]*&gt;(\w|\W)*&lt;\/object[^&gt;]*&gt;/gi;
+            var reg2 = /&lt;script[^&gt;]*&gt;(\w|\W)*&lt;\/script[^&gt;]*&gt;/gi;          
+            
+            return str.replace(reg1, '').replace(reg2, '');
+        },
+        /**
+         * 添加富文本到容器中
+         * @param {String || HTMLElement} container 
+         * @param {String} richText
+         */
+        appendRichText: function(container, richText) {
+            container = Util.selector(container);
+            richText = richText || <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+            richText = this.filterScript(richText);
+&nbsp;
+            var dom = Util.parseHtml(richText);
+&nbsp;
+            container.appendChild(dom);
+        },
+        /**
+         * 简化详情的设置
+         * @param {Object} options
+         * 包括
+         * dom, 
+         * template, 
+         * data
+         * richTxtSelector
+         * richTxt 富文本数据
+         */
+        setDetail: function(options) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            if (!options) {</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+            var container = <span class="cstat-no" title="statement not covered" >Util.selector(options.container);</span>
+            var template = <span class="cstat-no" title="statement not covered" >Util.selector(options.template);</span>
+            var richTxt = <span class="cstat-no" title="statement not covered" >options.richTxt || '';</span>
+            var richTxtSelector = <span class="cstat-no" title="statement not covered" >options.richTxtSelector || '';</span>
+            var data = <span class="cstat-no" title="statement not covered" >options.data || {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (!container || !template) {</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+            
+            // 先清空
+<span class="cstat-no" title="statement not covered" >            container.innerHTML = '';</span>
+            
+            
+            var result = <span class="cstat-no" title="statement not covered" >Mustache.render(template.innerHTML, data);</span>
+&nbsp;
+            var dom = <span class="cstat-no" title="statement not covered" >Util.parseHtml(result);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            container.appendChild(dom);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (richTxt &amp;&amp; richTxtSelector) {</span>
+                // 必须添加完毕后再找
+<span class="cstat-no" title="statement not covered" >                richTxtSelector = Util.selector(options.richTxtSelector);</span>
+&nbsp;
+                // 单独映射富文本，富文本必须单独通过api添加
+<span class="cstat-no" title="statement not covered" >                this.appendRichText(richTxtSelector, richTxt);</span>
+            }
+        }
+    };
+&nbsp;
+    Util.html = innerUtil;
+&nbsp;
+})();</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Aug 11 2017 16:38:31 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\common\common.loadjs.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/common/</a> common.loadjs.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.76% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/74</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.23% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.76% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/74</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * 作者: 戴荔春
+ * 创建时间: 2017/06/22
+ * 版本: [1.0, 2017/06/22 ]
+ * 版权: 江苏国泰新点软件有限公司
+ * 描述: 动态加载文件相关
+ */
+&nbsp;
+(function(exports) {
+    /**
+     * 使用cssboot中暴露出来的时间戳，如果没有，先勉强采用默认值
+     */
+    var defaultStamp = '_t=20170523';
+    var TIME_STAMP = window.Config ? (window.Config.TIME_STAMP || <span class="branch-1 cbranch-no" title="branch not covered" >defaultStamp)</span> : <span class="branch-1 cbranch-no" title="branch not covered" >defaultStamp;</span>
+&nbsp;
+    /**
+     * 动态引入文件-如引入css或js
+     * 目前是采用并联+递归的方式加载，串联看似用不上，但依然保留这个方法
+     * @param {Array||String} pathArray 路径，一个数组-用来并联加载，或者字符串用来串联加载
+     * 会将这个参数中的不同子数组之间进行串联加载，同一个子数组之间进行并联加载
+     * -串联加载一般用到前后依赖性较强的对方
+     * -并联加载更快
+     * @param {Function} callback 成功加载后的回调
+     * @example 调用方式前面的路径可以是无限多的，例如
+     * path1,path2,...,pathn,callback
+     */
+    exports.loadJs = function() <span class="fstat-no" title="function not covered" >{</span>
+&nbsp;
+        // 递归调用，可以依次获取
+<span class="cstat-no" title="statement not covered" >        loadJsRecurse.apply(this, arguments);</span>
+&nbsp;
+    };
+&nbsp;
+    /**
+     * 递归加载脚本
+     * 参数中分别是
+     * path1,...,pathn,callback
+     * 需要依次取出并进行加载
+     */
+    function loadJsRecurse() <span class="fstat-no" title="function not covered" >{</span>
+&nbsp;
+        // 永远不要试图修改arguments，请单独备份
+        var args = <span class="cstat-no" title="statement not covered" >[].slice.call(arguments);</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof args[0] === 'function') {</span>
+            // 如果已经加载到最后一个了，并且是回调
+<span class="cstat-no" title="statement not covered" >            args[0]();</span>
+        } else <span class="cstat-no" title="statement not covered" >if (args[0] == null) {</span>
+            // 如果已经加载到最后一个了，但是没有回调，什么都不做
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        } else {
+            var self = <span class="cstat-no" title="statement not covered" >this;</span>
+<span class="cstat-no" title="statement not covered" >            if (Array.isArray(args[0]) || exports.getPathSuffix(args[0]) == 'js') {</span>
+                // js则链式回调
+                // 并联加载当前元素-可能是一个，也可能是数组
+<span class="cstat-no" title="statement not covered" >                parallelLoadFiles(args[0], function() <span class="fstat-no" title="function not covered" >{</span></span>
+                    // 需要去除当前已经加载完毕的参数
+<span class="cstat-no" title="statement not covered" >                    loadJsRecurse.apply(self, args.slice(1));</span>
+                });
+            } else {
+                // 其它如css则直接加载，不管回调
+<span class="cstat-no" title="statement not covered" >                parallelLoadFiles(args[0]);</span>
+<span class="cstat-no" title="statement not covered" >                loadJsRecurse.apply(self, args.slice(1));</span>
+            }
+&nbsp;
+        }
+    }
+&nbsp;
+    /**
+     * 并联加载指定的脚本,css
+     * 并联加载[同步]同时加载，不管上个是否加载完成，直接加载全部
+     * 全部加载完成后执行回调
+     * @param array|string 指定的脚本们
+     * @param function 成功后回调的函数
+     * @return array 所有生成的脚本元素对象数组
+     */
+&nbsp;
+    function parallelLoadFiles(scripts, callback) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof(scripts) != "object") {</span>
+<span class="cstat-no" title="statement not covered" >            scripts = [scripts];</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (scripts[0] === undefined) {</span>
+            // 过滤空数组
+<span class="cstat-no" title="statement not covered" >            callback &amp;&amp; callback();</span>
+        }
+        var HEAD = <span class="cstat-no" title="statement not covered" >document.getElementsByTagName("head").item(0) || document.documentElement,</span>
+            s = <span class="cstat-no" title="statement not covered" >new Array(),</span>
+            loaded = <span class="cstat-no" title="statement not covered" >0,</span>
+            fragment = <span class="cstat-no" title="statement not covered" >document.createDocumentFragment();</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; scripts.length; i++) {</span>
+            var path = <span class="cstat-no" title="statement not covered" >scripts[i];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (!path) {</span>
+<span class="cstat-no" title="statement not covered" >                loaded++;</span>
+<span class="cstat-no" title="statement not covered" >                continue;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            path = exports.changePathByConfig(path);</span>
+<span class="cstat-no" title="statement not covered" >            path = exports.getFullPath(path);</span>
+&nbsp;
+            var suffix = <span class="cstat-no" title="statement not covered" >exports.getPathSuffix(path);</span>
+<span class="cstat-no" title="statement not covered" >            path += ('?' + TIME_STAMP);</span>
+<span class="cstat-no" title="statement not covered" >            if (suffix == 'js') {</span>
+                // js
+<span class="cstat-no" title="statement not covered" >                s[i] = document.createElement("script");</span>
+<span class="cstat-no" title="statement not covered" >                s[i].setAttribute("type", "text/javascript");</span>
+            } else {
+                // css
+<span class="cstat-no" title="statement not covered" >                s[i] = document.createElement("link");</span>
+<span class="cstat-no" title="statement not covered" >                s[i].setAttribute("type", "text/css");</span>
+<span class="cstat-no" title="statement not covered" >                s[i].setAttribute("rel", "stylesheet");</span>
+            }
+<span class="cstat-no" title="statement not covered" >            s[i].suffix = suffix;</span>
+            // css在某些版本的浏览器中不会触发onreadystatechange,所以直接默认css已经加载好
+<span class="cstat-no" title="statement not covered" >            if (suffix.toLowerCase() === 'css') {</span>
+                // 判断时默认css加载完毕,因为css并不会影响程序操作
+<span class="cstat-no" title="statement not covered" >                loaded++;</span>
+            } else <span class="cstat-no" title="statement not covered" >if (suffix.toLowerCase() === 'js') {</span>
+                // 只有js才监听onload和onerror
+<span class="cstat-no" title="statement not covered" >                s[i].onload = s[i].onreadystatechange = function() <span class="fstat-no" title="function not covered" >{ //Attach handlers for all browsers</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (! /*@cc_on!@*/ 0 || this.readyState == "loaded" || this.readyState == "complete") {</span>
+<span class="cstat-no" title="statement not covered" >                        loaded++;</span>
+<span class="cstat-no" title="statement not covered" >                        this.onload = this.onreadystatechange = null;</span>
+<span class="cstat-no" title="statement not covered" >                        if (this.suffix === 'js') {</span>
+                            // 只移除脚本,css如果移除就没效果了
+                            // 暂时不移除脚本,移除了无法进行判断
+                            // this.parentNode.removeChild(this);
+                        }
+<span class="cstat-no" title="statement not covered" >                        if (loaded == scripts.length &amp;&amp; typeof(callback) == "function") {</span>
+<span class="cstat-no" title="statement not covered" >                            callback();</span>
+                        }
+                    }
+                };
+<span class="cstat-no" title="statement not covered" >                s[i].onerror = function() <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >                    console.error("加载js文件出错,路径:" + this.getAttribute('src'));</span>
+                    // 加载出错也要继续加载其它文件
+<span class="cstat-no" title="statement not covered" >                    loaded++;</span>
+<span class="cstat-no" title="statement not covered" >                    if (loaded == scripts.length &amp;&amp; typeof(callback) == "function") {</span>
+<span class="cstat-no" title="statement not covered" >                        callback();</span>
+                    }
+                };
+            }
+&nbsp;
+            // 这里设置两边charset 是因为有时候charset设置前面会有bug
+            // 目前设置到后面
+            // s[i].charset = 'UTF-8';
+            //s[i].setAttribute('async', true);
+<span class="cstat-no" title="statement not covered" >            if (suffix == 'js') {</span>
+<span class="cstat-no" title="statement not covered" >                s[i].setAttribute("src", path);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                s[i].setAttribute("href", path);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            s[i].charset = 'UTF-8';</span>
+<span class="cstat-no" title="statement not covered" >            fragment.appendChild(s[i]);           </span>
+        }
+<span class="cstat-no" title="statement not covered" >        HEAD.appendChild(fragment);</span>
+    }
+    /**
+     * 移动已经加载过的js/css
+     * @param {String} filename
+     * @param {String} filetype
+     */
+    function removejscssfile(filename, filetype) <span class="fstat-no" title="function not covered" >{</span>
+        var targetelement = <span class="cstat-no" title="statement not covered" >(filetype == "js") ? "script" : (filetype == "css") ? "link" : "none"</span>
+        var targetattr = <span class="cstat-no" title="statement not covered" >(filetype == "js") ? "src" : (filetype == "css") ? "href" : "none"</span>
+        var allsuspects = <span class="cstat-no" title="statement not covered" >document.getElementsByTagName(targetelement)</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = allsuspects.length; i &gt;= 0; i--) {</span>
+<span class="cstat-no" title="statement not covered" >            if (allsuspects[i] &amp;&amp; allsuspects[i].getAttribute(targetattr) != null &amp;&amp; allsuspects[i].getAttribute(targetattr).indexOf(filename) != -1)</span>
+<span class="cstat-no" title="statement not covered" >                allsuspects[i].parentNode.removeChild(allsuspects[i])</span>
+        }
+    }
+    /**
+     * 移除css或者js
+     * @param {String} fileName 文件名
+     * 例如 mui.min.css  mui.min.js
+     */
+    exports.removeFile = function(fileName) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        if (!fileName) {</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+        // 后缀-默认为js
+        var dotIndex = <span class="cstat-no" title="statement not covered" >fileName.lastIndexOf(".");</span>
+        var suffix = <span class="cstat-no" title="statement not covered" >fileName.substring(dotIndex + 1, fileName.length) || 'js';</span>
+        var name = <span class="cstat-no" title="statement not covered" >fileName.substring(0, dotIndex);</span>
+<span class="cstat-no" title="statement not covered" >        removejscssfile(name, suffix);</span>
+    };
+})(Util);</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Aug 11 2017 16:38:31 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

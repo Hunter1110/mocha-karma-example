@@ -1,0 +1,1313 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\common\common.ajax.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/common/</a> common.ajax.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60.61% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>100/165</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.51% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>67/154</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.64% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60.61% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>100/165</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * 作者: 戴荔春
+ * 创建时间: 2017/07/04
+ * 版本: [1.0, 2017/07/04 ]
+ * 版权: 江苏国泰新点软件有限公司
+ * 描述: ajax的实现，同时拓展了文件上传的支持
+ * 作为核心类库存在
+ */
+(function(exports) {
+    "use strict";
+&nbsp;
+    var jsonType = 'application/json';
+    var htmlType = 'text/html';
+    var rscript = /&lt;script\b[^&lt;]*(?:(?!&lt;\/script&gt;)&lt;[^&lt;]*)*&lt;\/script&gt;/gi;
+    var scriptTypeRE = /^(?:text|application)\/javascript/i;
+    var xmlTypeRE = /^(?:text|application)\/xml/i;
+    var blankRE = /^\s*$/;
+&nbsp;
+    /**
+     * noop
+     */
+    var noop = exports.noop,
+        $isArray = exports.isArray,
+        $isPlainObject = exports.isPlainObject,
+        $type = exports.type,
+        $each = exports.each,
+        $extend = exports.extend;
+&nbsp;
+    var now = Date.now || <span class="branch-1 cbranch-no" title="branch not covered" >function() <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        return +new Date();</span>
+    };
+&nbsp;
+    /**
+     * 默认的default设置
+     */
+    var defaultSetting = {
+        url: '',
+        type: 'POST',
+        beforeSend: noop,
+        success: noop,
+        error: noop,
+        complete: noop,
+        extendHook: {},
+        // 可以传一个context，成功回调和失败回调中都可以用this指向它
+        context: null,
+        xhr: function(protocol) {
+            return new window.XMLHttpRequest();
+        },
+        // MIME 类别映射，对应的是 dataType属性的值 ，MIME值需要固定
+        // dataType 默认不做设置，会优先使用  mimeType 或者response中的 content-type
+        accepts: {
+            script: 'text/javascript, application/javascript, application/x-javascript',
+            json: jsonType,
+            xml: 'application/xml, text/xml',
+            html: htmlType,
+            text: 'text/plain'
+        },
+        // 0代表不会进行超时处理
+        timeout: 0,
+        // 是否将数据序列化成字符串
+        processData: true,
+        // 为true是，GET请求会自动进行缓存
+        cache: true,
+        // 为true时，会自动给请求加上  X-Requested-With 头部
+        xRequestedWith: false,
+        // 延迟请求，默认为0
+        delay: 0,
+        // 是否对原始的返回数据进行过滤处理
+        // 可以传用户自定义的函数，处理最返回的 response 数据
+        dataFilter: noop
+    };
+&nbsp;
+    /**
+     * 正式开始ajax时，会回调一次，
+     * 如果用户实现了这个函数，并且返回false，则会终止ajax
+     * @param {Object} xhr 
+     * @param {Object} settings 
+     */
+    var ajaxBeforeSend = function(xhr, settings) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (settings.beforeSend.call(settings.context, xhr, settings) === false) {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    };
+&nbsp;
+    /**
+     * ajax成功会走入的回调
+     * @param {Object} data 最终的数据
+     * @param {Object} xhr 
+     * @param {Object} settings 
+     */
+    var ajaxSuccess = function(data, xhr, settings, resolve, reject) {
+        var context = settings.context,
+            status = 'success';
+        settings.success &amp;&amp; settings.success.call(context, data);
+        // call传一个数组其实只是一个参数 因为promise只会接收一个参数，apply数组才是多个参数
+        resolve &amp;&amp; resolve.call(context, data);
+        ajaxComplete('success', xhr, settings);
+    };
+&nbsp;
+    /**
+     * ajax错误会走入的回调
+     * @param {String} error 错误提示文字
+     * @param {String} type "timeout", "error", "abort", "parsererror"
+     * @param {Object} xhr 完整的xhr
+     * @param {Object} settings 当前的设置
+     */
+    var ajaxError = function(error, type, xhr, settings, resolve, reject) <span class="fstat-no" title="function not covered" >{</span>
+        var context = <span class="cstat-no" title="statement not covered" >settings.context;</span>
+        var errorObj = <span class="cstat-no" title="statement not covered" >{</span>
+            xhr: xhr,
+            type: type,
+            error: error
+        }
+<span class="cstat-no" title="statement not covered" >        settings.error &amp;&amp; settings.error.call(context, errorObj);</span>
+<span class="cstat-no" title="statement not covered" >        reject &amp;&amp; reject.call(context, errorObj);</span>
+<span class="cstat-no" title="statement not covered" >        ajaxComplete(type, xhr, settings);</span>
+    };
+&nbsp;
+    /**
+     * 不管是成功还是失败，都会走这个回调
+     * @param {String} status "success", "notmodified", "error", "timeout", "abort", "parsererror"
+     * @param {Object} xhr 
+     * @param {Object} settings 
+     */
+    var ajaxComplete = function(status, xhr, settings) {
+        settings.complete.call(settings.context, xhr, status);
+    };
+&nbsp;
+    /**
+     * ajax的数据过滤器，用来方便统一处理数据
+     * @param {Object} data
+     * @param {String} dataType 请求的数据类型
+     * @param {Object} settings
+     */
+    var ajaxDataFilter = function(data, dataType, settings, resolve, reject) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (settings.dataFilter == noop) {
+<span class="cstat-no" title="statement not covered" >            return data;</span>
+        }
+        var context = settings.context
+        return settings.dataFilter.call(context, data, dataType, resolve, reject);
+    };
+&nbsp;
+    /**
+     * 将数据添加url中
+     * @param {String} url
+     * @param {String} query
+     */
+    var appendQuery = function(url, query) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        if (query === '') {</span>
+<span class="cstat-no" title="statement not covered" >            return url;</span>
+        }
+        // 很聪明的正则替换
+<span class="cstat-no" title="statement not covered" >        return (url + '&amp;' + query).replace(/[&amp;?]{1,2}/, '?');</span>
+    };
+    /**
+     * 序列化参数，如果是object，会递归
+     * 序列化成
+     * params[guid]:12345
+     * 这种格式
+     * @param {Object} params
+     * @param {Object} obj
+     * @param {Object} traditional 一般不开启，如果开启，则序列化方式会很奇怪
+     * @param {Object} scope
+     */
+    var serialize = function(params, obj, traditional, scope) <span class="fstat-no" title="function not covered" >{</span>
+        var type, array = <span class="cstat-no" title="statement not covered" >$isArray(obj),</span>
+            hash = <span class="cstat-no" title="statement not covered" >$isPlainObject(obj);</span>
+<span class="cstat-no" title="statement not covered" >        $each(obj, function(key, value) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >            type = $type(value);</span>
+<span class="cstat-no" title="statement not covered" >            if (scope) {</span>
+<span class="cstat-no" title="statement not covered" >                key = traditional ? scope :</span>
+                    scope + '[' + (hash || type === 'object' || type === 'array' ? key : '') + ']';
+            }
+            // handle data in serializeArray() format
+<span class="cstat-no" title="statement not covered" >            if (!scope &amp;&amp; array) {</span>
+<span class="cstat-no" title="statement not covered" >                params.add(value.name, value.value);</span>
+            }
+            // recurse into nested objects
+            else <span class="cstat-no" title="statement not covered" >if (type === "array" || (!traditional &amp;&amp; type === "object")) {</span>
+<span class="cstat-no" title="statement not covered" >                serialize(params, value, traditional, key);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                params.add(key, value);</span>
+            }
+        });
+    };
+    /**
+     * 讲一个对象数据序列化成 form 形式
+     * 这里会构建一个param对象 然后开始序列化
+     * @param {Object} obj
+     * @param {Object} traditional
+     */
+    var param = function(obj, traditional) <span class="fstat-no" title="function not covered" >{</span>
+        var params = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >        params.add = function(k, v) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >            this.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));</span>
+        };
+<span class="cstat-no" title="statement not covered" >        serialize(params, obj, traditional);</span>
+<span class="cstat-no" title="statement not covered" >        return params.join('&amp;').replace(/%20/g, '+');</span>
+    };
+    /**
+     * 序列化ajax的数据
+     * 这里面要分别处理 普通的ajax数据以及文件数据
+     * @param {Object} settings
+     */
+    var serializeData = function(settings) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (settings.processData &amp;&amp; settings.data &amp;&amp; typeof settings.data !== "string") {
+            var contentType = <span class="cstat-no" title="statement not covered" >settings.contentType;</span>
+<span class="cstat-no" title="statement not covered" >            if (!contentType &amp;&amp; settings.headers) {</span>
+<span class="cstat-no" title="statement not covered" >                contentType = settings.headers['Content-Type'];</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (contentType &amp;&amp; ~contentType.indexOf(jsonType)) {</span>
+                // application/json
+<span class="cstat-no" title="statement not covered" >                settings.data = JSON.stringify(settings.data);</span>
+            } else {
+                // 非 application/json形式，需要form表单序列化
+<span class="cstat-no" title="statement not covered" >                settings.data = param(settings.data, settings.traditional);</span>
+            }
+        }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (settings.data &amp;&amp; (!settings.type || settings.type.toUpperCase() === 'GET')) {
+            // GET方式，拼接url
+<span class="cstat-no" title="statement not covered" >            settings.url = appendQuery(settings.url, settings.data);</span>
+<span class="cstat-no" title="statement not covered" >            settings.data = undefined;</span>
+        }
+    };
+&nbsp;
+    /**
+     * 将 MIME 转为 dataType 方便成功请求时处理数据
+     * 基本顺序是  settings 的
+     * dataType  mimeType getResponseHeader中的content-type
+     * @param {Object} mime
+     */
+    var mimeToDataType = function(mime) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (mime) {
+            mime = mime.split(';', 2)[0];
+        }
+        return mime &amp;&amp; (mime === htmlType ? 'html' :
+<span class="branch-1 cbranch-no" title="branch not covered" >            mime === jsonType ? 'json' :</span>
+            scriptTypeRE.test(mime) ? 'script' :
+            xmlTypeRE.test(mime) &amp;&amp; 'xml') || <span class="branch-2 cbranch-no" title="branch not covered" >'text';</span>
+    };
+&nbsp;
+    /**
+     * 处理ajax的头部设置，过长，所以就抽取出来了
+     * @param {Object} xhr
+     * @param {Object} settings
+     * @param {String} dataType
+     */
+    var dealAjaxHeaders = function(xhr, settings, dataType) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (settings.cache === false || ((!settings || settings.cache !== true) &amp;&amp; (<span class="branch-3 cbranch-no" title="branch not covered" >'script' === dataType)</span>)) {
+<span class="cstat-no" title="statement not covered" >            settings.url = appendQuery(settings.url, '_=' + now());</span>
+        }
+&nbsp;
+        // 处理头部
+        var mime = settings.accepts[dataType &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >dataType.toLowerCase()]</span>;
+        var headers = {};
+        var setHeader = function(name, value) {
+            headers[name.toLowerCase()] = [name, value];
+        };
+&nbsp;
+        // 正式设置头部的 Accept
+        setHeader('Accept', mime || '*/*');
+&nbsp;
+        // 这个头部可以通过配置项选择是否配置
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (settings.xRequestedWith) {
+<span class="cstat-no" title="statement not covered" >            setHeader('X-Requested-With', 'XMLHttpRequest');</span>
+        }
+&nbsp;
+        // 如果 MIME 存在，重写它
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!!(mime = settings.mimeType || mime)) {
+<span class="cstat-no" title="statement not covered" >            if (mime.indexOf(',') &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >                mime = mime.split(',', 2)[0];</span>
+            }
+<span class="cstat-no" title="statement not covered" >            xhr.overrideMimeType &amp;&amp; xhr.overrideMimeType(mime);</span>
+        }
+&nbsp;
+        // Content-Type 的设置，为false时是不会设置的
+        <span class="missing-if-branch" title="else path not taken" >E</span>if ((settings.contentType || (settings.contentType !== false &amp;&amp; settings.data &amp;&amp; settings.type.toUpperCase() !== 'GET'))) {
+            setHeader('Content-Type', settings.contentType || 'application/x-www-form-urlencoded');
+        }
+&nbsp;
+        // 头部的设置
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (settings.headers) {
+<span class="cstat-no" title="statement not covered" >            for (var name in settings.headers) {</span>
+<span class="cstat-no" title="statement not covered" >                setHeader(name, settings.headers[name]);</span>
+            }
+        }
+        xhr.setRequestHeader = setHeader;
+&nbsp;
+        return headers;
+    };
+&nbsp;
+    var ajax = function(options) {
+        var Promise = window.Promise;
+&nbsp;
+        var func = function(resolve, reject) {
+            var settings = $extend(true, {}, defaultSetting, options);
+&nbsp;
+            // 防止被覆盖时出问题
+            settings.error = settings.error || noop;
+&nbsp;
+            // 序列化数据，包括普通数据以及文件数据都会序列化
+            serializeData(settings);
+&nbsp;
+            // 检查 url的 protocol
+            var protocol = /^([\w-]+:)\/\//.test(settings.url) ? <span class="branch-0 cbranch-no" title="branch not covered" >RegExp.$1 </span>: window.location.protocol;
+            var xhr = settings.xhr(settings);
+            var nativeSetHeader = xhr.setRequestHeader;
+            var abortTimeout;
+            var dataType = settings.dataType;
+&nbsp;
+            // 处理ajax的 headers contenttype mime 等设置
+            var headers = dealAjaxHeaders(xhr, settings, dataType);
+&nbsp;
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    xhr.onreadystatechange = noop;
+                    clearTimeout(abortTimeout);
+                    var result, error = false;
+                    var isLocal = protocol === 'file:';
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || <span class="branch-2 cbranch-no" title="branch not covered" >xhr.status === 304 </span>|| (<span class="branch-3 cbranch-no" title="branch not covered" >xhr.status == 0 </span>&amp;&amp; <span class="branch-4 cbranch-no" title="branch not covered" >isLocal </span>&amp;&amp; <span class="branch-5 cbranch-no" title="branch not covered" >xhr.responseText)</span>) {
+                        dataType = dataType || mimeToDataType(settings.mimeType || xhr.getResponseHeader('content-type'));
+&nbsp;
+                        dataType = dataType.toLowerCase();
+&nbsp;
+                        <span class="missing-if-branch" title="if path not taken" >I</span>if (xhr.responseType == 'arraybuffer' || xhr.responseType == 'blob') {
+<span class="cstat-no" title="statement not covered" >                            result = xhr.response</span>
+                        } else {
+                            result = xhr.responseText;
+                        }
+&nbsp;
+                        try {
+                            result = ajaxDataFilter(result, dataType, settings, resolve, reject);
+                            <span class="missing-if-branch" title="if path not taken" >I</span>if (dataType === 'script') {
+<span class="cstat-no" title="statement not covered" >                                (1, eval)(result);</span>
+                            } else <span class="missing-if-branch" title="if path not taken" >I</span>if (dataType === 'xml') {
+<span class="cstat-no" title="statement not covered" >                                result = xhr.responseXML;</span>
+                            } else <span class="missing-if-branch" title="if path not taken" >I</span>if (dataType === 'json' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >typeof result === 'string')</span> {
+<span class="cstat-no" title="statement not covered" >                                result = blankRE.test(result) ? null : JSON.parse(result);</span>
+                            }
+                        } catch (e) {
+<span class="cstat-no" title="statement not covered" >                            error = e;</span>
+                        }
+                        <span class="missing-if-branch" title="if path not taken" >I</span>if (error) {
+<span class="cstat-no" title="statement not covered" >                            ajaxError(error, 'parsererror', xhr, settings, resolve, reject);</span>
+                        } else {
+                            ajaxSuccess(result, xhr, settings, resolve, reject);
+                        }
+                    } else {
+                        // 终止或失败都可能进入
+                        var status = <span class="cstat-no" title="statement not covered" >xhr.status ? 'error' : 'abort';</span>
+                        var statusText = <span class="cstat-no" title="statement not covered" >xhr.statusText || null;</span>
+<span class="cstat-no" title="statement not covered" >                        if (isLocal) {</span>
+<span class="cstat-no" title="statement not covered" >                            status = 'error';</span>
+<span class="cstat-no" title="statement not covered" >                            statusText = '404';</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        ajaxError(statusText, status, xhr, settings, resolve, reject);</span>
+                    }
+                }
+            };
+            
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (settings.extendHook) {
+                // 如果存在拓展的 Hook程序，比如用来拓展 upload
+                for (var key in settings.extendHook) {
+                    var item = <span class="cstat-no" title="statement not covered" >settings.extendHook[key];</span>
+<span class="cstat-no" title="statement not covered" >                    item &amp;&amp; item(xhr, settings);</span>
+                }
+            }
+            
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (ajaxBeforeSend(xhr, settings) === false) {
+<span class="cstat-no" title="statement not covered" >                xhr.abort();</span>
+<span class="cstat-no" title="statement not covered" >                ajaxError('before send error', 'abort', xhr, settings, resolve, reject);</span>
+<span class="cstat-no" title="statement not covered" >                return xhr;</span>
+            }
+&nbsp;
+            // 额外的xhr配置
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (settings.xhrFields) {
+<span class="cstat-no" title="statement not covered" >                for (var name in settings.xhrFields) {</span>
+<span class="cstat-no" title="statement not covered" >                    xhr[name] = settings.xhrFields[name];</span>
+                }
+            }
+            // 是否异步，默认为true
+            var async = 'async' in settings ? <span class="branch-0 cbranch-no" title="branch not covered" >settings.async </span>: true;
+&nbsp;
+            xhr.open(settings.type.toUpperCase(), settings.url, async, settings.username, settings.password);
+&nbsp;
+            // 处理超时请求
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (settings.timeout &gt; 0) {
+<span class="cstat-no" title="statement not covered" >                abortTimeout = setTimeout(function() <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >                    xhr.onreadystatechange = noop;</span>
+                    // 请求超时中止
+<span class="cstat-no" title="statement not covered" >                    xhr.abort();</span>
+<span class="cstat-no" title="statement not covered" >                    ajaxError('请求超时，自动终止', 'timeout', xhr, settings, resolve, reject);</span>
+                }, settings.timeout);
+            }
+&nbsp;
+            // 头部设置，这时候将设置好的头部真正的添加到 xhr中
+            for (var name in headers) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (headers.hasOwnProperty(name)) {
+                    nativeSetHeader.apply(xhr, headers[name]);
+                }
+            }
+&nbsp;
+            setTimeout(function() {
+                xhr.send(settings.data ? settings.data : <span class="branch-1 cbranch-no" title="branch not covered" >null)</span>;
+            }, settings.delay);
+            
+            return xhr;
+        };
+&nbsp;
+        return Promise &amp;&amp; new Promise(func) || (<span class="branch-2 cbranch-no" title="branch not covered" >func.call(this))</span>;
+    };
+&nbsp;
+    ajax.serialize = serialize;
+&nbsp;
+    exports.ajax = ajax;
+&nbsp;
+})(Util);</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Aug 11 2017 16:38:31 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
