@@ -77,8 +77,8 @@
         isUseConfig: true,
         isRestFul: true,
         rootUrl: './',
-        isMock: true,	//是否模拟数据
-        requestMethod: ''	// ajax请求方式，'post'/'get'
+        isMock: true,   //是否模拟数据
+        requestMethod: ''   // ajax请求方式，'post'/'get'
     };
 
     if (comdto.isRestFul) {
@@ -145,7 +145,7 @@
         //console.log = function() {};
     }
 
-})(window && (window.Config = {}) || (this.Config = {}));
+})(this && (this.Config = {}) || (global.Config = {}));
 
 (function(exports) {
 
@@ -318,7 +318,7 @@
 
     exports.SrcBoot = SrcBoot;
 
-})(window || this);
+})(this || global);
 
 var paths = [
     // 写入每个页面必备的css文件
